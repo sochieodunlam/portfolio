@@ -1,3 +1,27 @@
 body {
+    padding: 0;
+    margin: 0;
     background-color: black;
+    /* max-width: 100%;
+    overflow-x: hidden; */
+}
+
+#grid-container {
+   
+    margin: 0;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    /* background-color: dodgerblue; */
+    gap: 2px;
+
+}
+
+.grid-item {
+  border: 0.5px solid black;
+  
 }
