@@ -72,10 +72,10 @@ function infect() {
 
 
     for (box in infectedBoxes) {
-        moves = [[infectedBoxes[box] + 1, "rgba(255, 142, 189, 1)"], // right
-            [infectedBoxes[box] - 1, "rgba(133, 255, 133, 1)"], // left
-            [infectedBoxes[box] - colNum, "rgba(142, 217, 255, 1)"], // up 
-            [infectedBoxes[box] + colNum, "rgba(206, 142, 255, 1)"]] // down
+        moves = [[infectedBoxes[box] + 1, "rgba(255, 142, 189"], // right
+            [infectedBoxes[box] - 1, "rgba(133, 255, 133"], // left
+            [infectedBoxes[box] - colNum, "rgba(142, 217, 255"], // up 
+            [infectedBoxes[box] + colNum, "rgba(206, 142, 255"]] // down
         moves = moves.filter(function(move) {
             return move[0] > 1 && move[0] < area && !archivedBoxes.includes(move[0])
         })
@@ -91,7 +91,7 @@ function infect() {
         if (x == 0) { 
             infectedBoxes.push(moves[0][0])
             const newBox = document.getElementById(`${moves[0][0]}`)
-            newBox.style.backgroundColor = `${moves[0][1]}`;
+            newBox.style.backgroundColor = `${moves[0][1]}, 0.9)`;
             newBox.style.border = "1px solid rgba(0, 162, 255, 1)";
             infectedBoxes.splice(box, 1)
             archivedBoxes.push(moves[0][0])
@@ -101,7 +101,7 @@ function infect() {
         if (x == 1) { 
             infectedBoxes.push(moves[1][0]) 
             const newBox = document.getElementById(`${moves[1][0]}`)
-            newBox.style.backgroundColor = `${moves[1][1]}`
+            newBox.style.backgroundColor = `${moves[1][1]}, 0.9)`
             newBox.style.border = "1px solid rgba(0, 162, 255, 1)";
             infectedBoxes.splice(box, 1)
             archivedBoxes.push(moves[1][0])
@@ -109,7 +109,7 @@ function infect() {
         if (x == 2) { 
             infectedBoxes.push(moves[2][0]) 
             const newBox = document.getElementById(`${moves[2][0]}`)
-            newBox.style.backgroundColor = `${moves[2][1]}`
+            newBox.style.backgroundColor = `${moves[2][1]}, 0.9)`
             newBox.style.border = "1px solid rgba(0, 162, 255, 1)";
             infectedBoxes.splice(box, 1)
             archivedBoxes.push(moves[2][0])

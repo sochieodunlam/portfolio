@@ -1,12 +1,26 @@
+@font-face {
+    font-family: ppmondwest-regular;
+    src: url("../attributes/fonts/mondwest-neuebit-font-1768342387-0/ppmondwest-regular.otf")
+}
+
+@font-face {
+    font-family: google-sans-code;
+    src: url("../attributes/fonts/Google_Sans_Code/GoogleSansCode-VariableFont_wght.ttf")
+}
+
 body {
     padding: 0;
     margin: 0;
-    background-color: black;
+    background-image: url("../attributes/images/noise.svg");
+    overflow: hidden;
+    background-repeat: repeat;
+    /* TODO: get background to move so grain is moving */
     
     max-width: 100%;
     overflow-x: hidden; 
     /* TODO: stop distortion on resize */
 }
+
 
 #grid-container {
     margin: 0;
@@ -17,10 +31,118 @@ body {
 
     display: grid;
     gap: 2px;
-
 }
 
-.grid-item {
- 
-  
+
+
+.css-typing {
+    position: absolute;
+    color: white;
+    border-right: .15em solid orange;
+    /* font-family: "Courier"; */
+    font-family: google-sans-code;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#open-bracket {
+    top: 40%;
+    left: 10%;
+}
+
+#skills {
+    top: 43%;
+    left: 12%;
+}
+
+#current {
+    top: 46%;
+    left: 12%;
+}
+
+#contact {
+    top: 49%;
+    left: 12%;
+}
+
+#closed-bracket {
+    top: 52%;
+    left: 12%
+}
+
+#typewriter-container {
+    background-color: rgba(99, 169, 255, 0.75);
+    opacity: 50%;
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    top: 40%;
+    left: 8%
+}
+
+/* Animation */
+#open-bracket {
+  animation: typewriter 0.5s steps(10) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter {
+  from{width: 0;}
+  to{width: 10em;}
+}
+@keyframes blinkTextCursor {
+  from {border-right-color: rgba(255,255,255,.75);}
+  to {border-right-color: transparent;}
+}
+
+#skills {
+  animation: typewriter2 1s steps(20) 1.5s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter2 {
+  from {width: 0;}
+  to {width: 25em;}
+}
+@keyframes blinkTextCursor {
+  from {border-right-color: rgba(255,255,255,.75);}
+  to {border-right-color: transparent;}
+}
+
+#current{
+  animation: current 2.5s steps(40) 2.5s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes current {
+  from {width: 0;}
+  to {width: 30em;}
+}
+@keyframes blinkTextCursor {
+  from {border-right-color: rgba(255,255,255,.75);}
+  to {border-right-color: transparent;}
+}
+
+#contact{
+  animation: contact 1s steps(20) 5s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes contact {
+  from {width: 0;}
+  to {width: 20em;}
+}
+@keyframes blinkTextCursor{
+  from {border-right-color: rgba(255,255,255,.75);}
+  to {border-right-color: transparent;}
+}
+
+#closed-bracket{
+  animation: closed-bracket 1s steps(20) 5s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes closed-bracket {
+  from {width: 0;}
+  to {width: 1em;}
+}
+@keyframes blinkTextCursor{
+  from {border-right-color: rgba(255,255,255,.75);}
+  to {border-right-color: transparent;}
 }
