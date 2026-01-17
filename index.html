@@ -6,20 +6,34 @@
     <link rel="stylesheet" href="CSS/styles.css">
     <title>Sochie Porfolio</title>
 </head>
-
-
 <body>
-    <div id="name-container">
-        <h1 id="name">Sochie</h1>
-        <img id="star" src="/attributes/images/star.png">
-    </div>
+<br><br>
 
-    <div id=icons>
-        <a id=linkedin href="linkedin.com/in/sochieodunlami" src="attributes/images/linkedin.svg"></a>
-    </div>
-    
+    <div id="header">
+        <div id="name-container">
+            <h1 id="name">Sochie</h1>
+            <img id="star" src="/attributes/images/star.png">
+        </div>
 
-    <div id="window">
+        <div id=icons>
+            <a id=linkedin href="https://www.linkedin.com/in/sochie-odunlami/">
+                <img class=icon src="attributes/images/linkedin.svg">
+            </a>
+
+            <a class=icon id="youtube" href="https://www.youtube.com/@sochie19">
+                <img src="attributes/images/youtube.svg">
+            </a>
+
+            <a class=icon id="github" href="https://github.com/sochieodunlam">
+                <img src="attributes/images/github.svg">
+            </a>
+        </div>
+    </div>
+    <div class="sections" id="div-one"></div>
+    <div class="sections" id="div-two"></div>
+    <div class="sections" id="div-three"></div>
+
+    <!-- <div id="window">
         <div id="window-top"></div>
         <div id="window-bottom"></div>
     </div>
@@ -29,19 +43,22 @@
         <p class="css-typing" id="open-bracket">const sochie = {</p>
         <p class="css-typing" id="skills">skills: ['product engineering', 'design'],</p>
         <p class="css-typing" id="current">currently: 'studying abroad in Sydney, Australia',</p>
-        <p class="css-typing" id="contact">contact: 'sochiefilm@gmail.com'</p> <!--TODO: link email -->
+        <p class="css-typing" id="contact">contact: 'sochiefilm@gmail.com'</p> 
         <p class="css-typing" id="closed-bracket">}</p>
-    </div>
+    </div> -->
 
     <div id="intro">
-        <p>Hi my name is <strong id="bold">Sochie!</strong><br>I like <u>art + technology + entrepreneurship.</u> Feel free to reach out!</p>
+        <p>Hi my name is <strong id="bold">Sochie!</strong><br>I'm a <strong>product engineer</strong> who likes <u>art + technology + entrepreneurship.</u> Feel free to reach out!</p>
+        <p>Currently: Studying abroad in Sydney, Australia<br></p>
     </div>
 
-    <img id="statue" src="attributes/images/greek_statue_dither.png">
+    <!-- <img id="statue" src="attributes/images/greek_statue_dither.png"> -->
     <a href="projects.html">Projects</a>
 
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="JS/carousel.js"></script>
     <script src="JS/script.js"></script>
-
     
+
 </body>
 </html>
