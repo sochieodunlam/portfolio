@@ -1,4 +1,5 @@
-@font-face {
+/* TODO: Change cursor to an asterisk */
+/* @font-face {
     font-family: ppmondwest-regular;
     src: url("../attributes/fonts/mondwest-neuebit-font-1768342387-0/ppmondwest-regular.otf")
 }
@@ -6,19 +7,83 @@
 @font-face {
     font-family: google-sans-code;
     src: url("../attributes/fonts/Google_Sans_Code/GoogleSansCode-VariableFont_wght.ttf")
+} */
+
+@font-face {
+    font-family: sf-mono-regular;
+    src: url("../attributes/fonts/SFMonoRegular.otf")
 }
+
+@font-face {
+    font-family: helvetica-neue;
+    src: url("../attributes/fonts/HelveticaNeue\ Thin.ttf")
+}
+
+@font-face {
+    font-family: akaya-telivigala;
+    src: url("../attributes/fonts/AkayaTelivigala-Regular.ttf")
+}
+
 
 body {
     padding: 0;
     margin: 0;
-    background-image: url("../attributes/images/noise.svg");
-    overflow: hidden;
-    background-repeat: repeat;
-    /* TODO: get background to move so grain is moving */
-    
     max-width: 100%;
     overflow-x: hidden; 
     /* TODO: stop distortion on resize */
+}
+
+#name-container {
+  position: absolute;
+  left: 50%;
+  display: flex;
+}
+
+#name {
+  font-family: akaya-telivigala;
+  margin: 0;
+}
+
+#bold {
+  font-weight: 900;
+  color: blue;
+}
+
+#icons {
+  display: flex;
+}
+
+
+#name-container:hover #star {
+  animation: spin 2s linear infinite;
+}
+
+#name-container:hover #name {
+  color: #0051FF;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+#star {
+  width: 40px;
+  height: 40px;
+}
+
+#intro {
+  position: absolute;
+  width: 300px;
+  font-size: 30px;
+  left: 2%;
+  top: 40%;
+  
+  font-family: helvetica-neue;
 }
 
 
@@ -34,53 +99,95 @@ body {
 }
 
 
-
 .css-typing {
     position: absolute;
     color: white;
     border-right: .15em solid orange;
     /* font-family: "Courier"; */
-    font-family: google-sans-code;
+    font-family: sf-mono-regular;
     font-size: 14px;
     white-space: nowrap;
     overflow: hidden;
 }
 
+#last-login {
+    top: 33%;
+    left: 31%;
+}
+
 #open-bracket {
-    top: 40%;
-    left: 10%;
+    top: 36%;
+    left: 31%;
 }
 
 #skills {
-    top: 43%;
-    left: 12%;
+    top: 39%;
+    left: 33%;
 }
 
 #current {
-    top: 46%;
-    left: 12%;
+    top: 42%;
+    left: 33%;
 }
 
 #contact {
-    top: 49%;
-    left: 12%;
+    top: 45%;
+    left: 33%;
 }
 
 #closed-bracket {
-    top: 52%;
-    left: 12%
-}
+    top: 48%;
+    left: 33%
+} 
 
-#typewriter-container {
-    background-color: rgba(99, 169, 255, 0.75);
-    opacity: 50%;
-    width: 500px;
-    height: 200px;
+#window {
     position: absolute;
-    top: 40%;
-    left: 8%
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
+#window-top {
+    background-color: white;
+    width: 600px;
+    height: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    outline: 1px solid white;
+    z-index: 1000;
+}
+#window-bottom {
+    background-color: rgba(0, 0, 0, 0.85);
+    margin: 0;
+    /* filter: blur(1px); */
+    width: 600px;
+    height: 300px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    outline: 1px solid white;
+}
+
+#statue {
+  width: 250px;
+  position: absolute;
+  top: 55%;
+  left: 80%;
+  animation: float 3s ease-in-out infinite;
+  z-index: 999;
+}
+
+@keyframes float {
+0% {
+  tranform: translateY(0px);
+}
+50% {
+  transform: translateY(25px);
+}
+
+100% {
+  transform: translateY(0px);
+}
+}
 /* Animation */
 #open-bracket {
   animation: typewriter 0.5s steps(10) 1s 1 normal both,
@@ -101,7 +208,7 @@ body {
 }
 @keyframes typewriter2 {
   from {width: 0;}
-  to {width: 25em;}
+  to {width: 26em;}
 }
 @keyframes blinkTextCursor {
   from {border-right-color: rgba(255,255,255,.75);}
@@ -135,7 +242,7 @@ body {
 }
 
 #closed-bracket{
-  animation: closed-bracket 1s steps(20) 5s 1 normal both,
+  animation: closed-bracket 0.1s steps(20) 6s 1 normal both,
              blinkTextCursor 500ms steps(44) infinite normal;
 }
 @keyframes closed-bracket {
@@ -146,3 +253,4 @@ body {
   from {border-right-color: rgba(255,255,255,.75);}
   to {border-right-color: transparent;}
 }
+
