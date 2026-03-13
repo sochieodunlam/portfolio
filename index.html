@@ -3,210 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/styles.css">
+    <title>Sochie Portfolio</title>
 </head>
 <body>
-        <header class="hero">
-            <h1 class="name">sochie<span class="underscore">_</span></h1>
-            <p class="tagline">product (design + engineering) and filmmaking</p>
-            
-            <div class="social-links">
-                <a href="https://www.youtube.com/@sochie19" target="_blank" class="social-icon">
-                    <img src="images/youtube.svg" alt="YouTube">
+
+    <div id="grid-container"></div>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">sochie's portfolio</a>
+            <div class="nav-links">
+                <a href="index.html" class="pill-link">PROJECTS</a>
+                <a href="fun.html" class="pill-link pill-fun">FUN</a>
+                <a href="mailto:sochiefilm@gmail.com" class="pill-link">CONTACT</a>
+            </div>
+            <div class="nav-right">
+                <a href="https://www.linkedin.com/in/sochie-odunlami/" class="nav-social" target="_blank">
+                    <img src="attributes/images/linkedin.svg" alt="LinkedIn">
                 </a>
-                <a href="https://www.linkedin.com/in/sochie-odunlami/" target="_blank" class="social-icon">
-                    <img src="images/linkedin.svg" alt="LinkedIn">
+                <a href="https://www.youtube.com/@sochie19" class="nav-social" target="_blank">
+                    <img src="attributes/images/youtube.svg" alt="YouTube">
+                </a>
+                <a href="https://github.com/sochieodunlam" class="nav-social" target="_blank">
+                    <img src="attributes/images/github.svg" alt="GitHub">
                 </a>
             </div>
-        </header>
-
-        <div class="scroll-indicator">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
         </div>
-    </div>
+    </nav>
 
-    <!-- Projects Section -->
-    <section class="projects-section">
-        <div class="container">
-            <div class="tabs">
-                <button class="tab-button active" data-tab="cs">computer science</button>
-                <button class="tab-button" data-tab="film">filmmaking</button>
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="hero-inner">
+            <!-- Left: Name + Affiliations -->
+            <div class="hero-left">
+                <h1 class="hero-name">Hi! My name is Sochie.</h1>
+                <p class="hero-subtitle">I'm an engineer, filmmaker, and entrepreneur. Currently at WashU studying CS, Math, and Entrepreneurship. Feel free to reach out!</p>
+                <div class="affiliations">
+                    <img src="attributes/images/barclays.png" alt="Barclays" id="barclays-logo">
+                    <img src="attributes/images/washu.png" alt="WashU" id="washu-logo">
+                    <img src="attributes/images/blk.png" alt="BLK Capital Management" id="blk-logo">
+                    <!-- <img src="attributes/images/logo.png" alt="" class="affiliation-logo"> -->
+                </div>
             </div>
-
-            <div class="tab-content active" id="cs-tab">
-                <div class="project-item">
-                    <div class="project-date">In Progress</div>
-                    <div class="project-title">DIY MP3 Player</div>
-                    <div class="project-tags">
-                        <span class="tag">C</span>
-                        <span class="tag">embedded programming</span>
+            <!-- Right: Experience -->
+            <div class="hero-right">
+                <p class="section-label">Currently... </p>
+                <div class="experience-list">
+                    <div class="experience-item">
+                        <span class="exp-role">Founder</span>
+                        <span class="exp-company">Cherimoya</span>
+                        <span class="exp-company">Feb 2026 - Present</span>
                     </div>
-                    <!-- <div class="project-links">
-                        <a href="https://google.com" target="_blank" class="project-link">
-                            <img src="images/github.svg" alt="GitHub">
-                        </a>
-                        <a href="https://google.com" target="_blank" class="project-link">
-                            <img src="images/www.svg" alt="Website">
-                        </a>
-                        <a href="#" class="read-more">Read more</a>
-                        </div> -->
-                        <!-- <a href="#" class="read-more">Read more</a> -->
+                    <div class="experience-item">
+                        <span class="exp-role">Technology Analyst Intern</span>
+                        <span class="exp-company">Barclays</span>
+                        <span class="exp-company">Summer 2026</span>
                     </div>
-
-                <div class="project-item">
-                    <div class="project-date">In Progress</div>
-                    <div class="project-title">Campus Delivery Robot</div>
-                    <div class="project-tags">
-                        <span class="tag">html/css</span>
-                        <span class="tag">typescript</span>
-                        <span class="tag">react</span>
+                    <div class="experience-item">
+                        <span class="exp-role">Software Engineer</span>
+                        <span class="exp-company">Stealth Startup</span>
+                        <span class="exp-company">Jan 2026 – Present</span>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/jaximus808/delivery-gdg-platform" target="_blank" class="project-link">
-                            <img src="images/github.svg" alt="GitHub">
-                        </a>
-                        <!-- <a href="https://google.com" target="_blank" class="project-link">
-                            <img src="images/www.svg" alt="Website">
-                        </a> -->
-                        <!-- <a href="#" class="read-more">Read more</a> -->
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-date">December 2025</div>
-                    <div class="project-title">Split Minds: Nature vs Nurture Data Visualization</div>
-                    <div class="project-tags">
-                        <span class="tag">HTML/CSS</span>
-                        <span class="tag">Javascript</span>
-                        <span class="tag">d3.js</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/csex57/splitminds" target="_blank" class="project-link">
-                            <img src="images/github.svg" alt="GitHub">
-                        </a>
-                        <a href="https://csex57.github.io/splitminds/" target="_blank" class="project-link">
-                            <img src="images/www.svg" alt="Website">
-                        </a>
-                        <!-- <a href="#" class="read-more">Read more</a> -->
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-date">October 2025</div>
-                    <div class="project-title">Farm Navigators: NASA Spaceapps Hackathon</div>
-                    <div class="project-tags">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">Javascript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/rduan1228/NASA-Hackathon-frontend" target="_blank" class="project-link">
-                            <img src="images/github.svg" alt="GitHub">
-                        </a>
-                        <a href="https://nasa-hackathon-frontend.vercel.app/" target="_blank" class="project-link">
-                            <img src="images/www.svg" alt="Website">
-                        </a>
-                        <!-- <a href="#" class="read-more">Read more</a> -->
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-date">May 2025</div>
-                    <div class="project-title">Zombie Outbreak Simulator</div>
-                    <div class="project-tags">
-                        <span class="tag">HTML/CSS/Javascript</span>
-                        <span class="tag">Google Maps API</span>
-                        <span class="tag">Flask</span>
-                        <span class="tag">Python</span>
-                    </div>
-                    <!-- <div class="project-links">
-                        <a href="https://google.com" target="_blank" class="project-link">
-                            <img src="images/github.svg" alt="GitHub">
-                        </a>
-                        <a href="https://google.com" target="_blank" class="project-link">
-                            <img src="images/www.svg" alt="Website">
-                        </a> -->
-                        <!-- <a href="#" class="read-more">Read more</a> -->
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-date">April 2025</div>
-                    <div class="project-title">Unveil AI: Google Developer Groups AI Hackathon</div>
-                    <div class="project-tags">
-                        <span class="tag">Next.js</span>
-                        <span class="tag">Bland AI API</span>
-                        <span class="tag">Google Gemini API</span>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="https://github.com/UnveilAI" target="_blank" class="project-link">
-                            <img src="images/github.svg" alt="GitHub">
-                        </a>
-                    </div>
-                        <!-- <a href="https://google.com" target="_blank" class="project-link">
-                            <img src="images/www.svg" alt="Website">
-                        </a> -->
-                        <!-- <a href="#" class="read-more">Read more</a> -->
-                    
-                </div>
-        
-            
-
-            <div class="tab-content" id="film-tab">
-                <div class="project-item">
-                    <div class="project-date">In Progress</div>
-                    <div class="project-title">Rize Magazine: Fields of Wealth Photoshoot</div>
-                    <div class="project-tags">
-                        <span class="tag">bmpcc4k</span>
-                        <span class="tag">DaVinci Resolve</span>
-                    </div>
-                    <!-- <div class="project-links">
-                        <a href="https://google.com" target="_blank" class="project-link">
-                            <img src="images/youtube.svg" alt="YouTube">
-                        </a> -->
-                        <!-- <a href="#" class="read-more">Read more</a> -->
-                    <!-- </div> -->
-                </div>
-
-                <div class="project-item">
-                    <div class="project-date">May 2025</div>
-                    <div class="project-title">Cherry Pie</div>
-                    <div class="project-tags">
-                        <span class="tag">short film</span>
-                        <span class="tag">DaVinci Resolve</span>
-                        <span class="tag">Sony A7s IV</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://youtu.be/HXfMc93l7YA" target="_blank" class="project-link">
-                            <img src="images/youtube.svg" alt="YouTube">
-                        </a>
-                        <!-- <a href="#" class="read-more">Read more</a> -->
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-date">October 2022</div>
-                    <div class="project-title">Ties</div>
-                    <div class="project-tags">
-                        <span class="tag">short film</span>
-                        <span class="tag">bmpcc6k</span>
-                        <span class="tag">Final Cut Pro</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://youtu.be/jUcauDgyf1g" target="_blank" class="project-link">
-                            <img src="images/youtube.svg" alt="YouTube">
-                        </a>
-                        <!-- <a href="#" class="read-more">Read more</a> -->
+                    <div class="experience-item">
+                        <span class="exp-role">Co-Founder</span>
+                        <span class="exp-company">MODLR</span>
+                        <span class="exp-company">Sep 2025 – Dec 2025</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <script src="JS/script.js"></script>
+    <!-- Projects Grid -->
+    <section class="projects-section" id="projects">
+        <h2 class="section-label">Recent!</h2>
+        <div class="projects-grid">
+            <!--Cherry Pie -->
+            <div class="project-card">
+                <div class="project-media">
+                    <video src="attributes/video/cherry_pie.mov" autoplay loop muted playsinline></video>
+                    <div class="project-overlay">
+                        <span class="overlay-role">Co-Writer, Director, Editor</span>
+                        <p class="overlay-text">Four friends accidentally kill at their high school graduation party. They must work through their differences in order to protect themselves.</p>
+                        <a href="https://youtu.be/5R8t2CChOOw" class="overlay-link" target="_blank">
+                            <img src="attributes/images/youtube.svg" alt="YouTube" class="overlay-icon">
+                            <span>Watch on YouTube</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-title">Cherry Pie</span>
+                    <span class="project-meta">FILM · May 2025</span>
+                </div>
+            </div>
+            <!-- AI Robot!-->
+            <div class="project-card">
+                <div class="project-media">
+                    <video src="attributes/video/evil_robot.mov" autoplay loop muted playsinline></video>
+                    <div class="project-overlay">
+                        <span class="overlay-role">Engineer</span>
+                        <p class="overlay-text">Thought it would be funny to make a mini PC using a Raspberry Pi 5, connect it to the ChatGPT API and give it an evil robot personality, and then make a video about it.</p>
+                        <a href="https://github.com/YOUR-ROBOT-REPO" class="overlay-link" target="_blank">
+                            <img src="attributes/images/github.svg" alt="GitHub" class="overlay-icon">
+                            <span>View on GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-title">Talking AI Robot</span>
+                    <span class="project-meta">Hardware/Software Project · August 2025 </span>
+                </div>
+            </div>
+            <!-- Unveil AI -->
+            <div class="project-card">
+                <div class="project-media">
+                    <video src="attributes/video/unveil_ai.mov" autoplay loop muted playsinline></video>
+                    <div class="project-overlay">
+                        <span class="overlay-role">Engineer</span>
+                        <p class="overlay-text">Finalist at Google Dev Fest hackathon. Allows users to unzip entire repositories, get detailed explanations with code snippets, and have a real phone call with an AI senior developer who knows the codebase.</p>
+                        <a href="https://github.com/UnveilAI" class="overlay-link" target="_blank">
+                            <img src="attributes/images/github.svg" alt="GitHub" class="overlay-icon">
+                            <span>View on GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-title">Unveil AI</span>
+                    <span class="project-meta">Software Project ·April 2025</span>
+                </div>
+            </div>
+            <!-- Fortune, Fields of Wealth -->
+            <div class="project-card">
+                <div class="project-media">
+                    <video src="attributes/video/fields_of_wealth.mov" autoplay loop muted playsinline></video>
+                    <div class="project-overlay">
+                        <span class="overlay-role">Cinematographer</span>
+                        <p class="overlay-text">Video content for Rize Magazine's 'Fortune' Photoshoot.</p>
+                        <a href="https://www.instagram.com/p/DTy2qQjCVah/" class="overlay-link" target="_blank">
+                            <img src="attributes/images/instagram.svg" alt="YouTube" class="overlay-icon">
+                            <span>Watch on Instagram</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-title">Rize Magazine 'Fortune' Photoshoot</span>
+                    <span class="project-meta">Video · December 2025</span>
+                </div>
+            </div>
+            <!-- Farm Navigators -->
+            <div class="project-card">
+                <div class="project-media">
+                    <video src="attributes/video/nasa_space_apps.mov" autoplay loop muted playsinline></video>
+                    <div class="project-overlay">
+                        <span class="overlay-role">Engineer</span>
+                        <p class="overlay-text">An interactive story-driven game that teaches sustainable farming through NASA Earth Science data. Players interpret real satellite data to make critical decisions and save their inherited family farm. Features original art! Created at the NASA Space Apps Hackathon.</p>
+                        <a href="https://github.com/rduan1228/NASA-Hackathon-frontend" class="overlay-link" target="_blank">
+                            <img src="attributes/images/www.svg" alt="Link" class="overlay-icon">
+                            <span>View on GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-title">Farm Navigators</span>
+                    <span class="project-meta">Software Project · October 2025</span>
+                </div>
+            </div>
+            <!-- Project 6 — empty -->
+            <div class="project-card">
+                <div class="project-media">
+                    <video src="attributes/video/cherimoya.mov" autoplay loop muted playsinline></video>
+                    <div class="project-overlay">
+                        <span class="overlay-role">Founder</span>
+                        <p class="overlay-text">Enterprise agents for people who have no idea how agents work.</p>
+                        <a href="https://YOUR-PROJECT-SIX-LINK.com" class="overlay-link" target="_blank">
+                            <img src="attributes/images/www.svg" alt="Link" class="overlay-icon">
+                            <span>View Project</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-title">Cherimoya</span>
+                    <span class="project-meta">COMING SOON</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
+    <!-- <script src="JS/carousel.js"></script> -->
+    <!-- <script src="JS/script.js"></script> -->
+
+    <script src="JS/main.js"></script>
+
 </body>
 </html>

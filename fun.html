@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/fun.css">
+    <title>Fun — Sochie</title>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">sochie's portfolio</a>
+            <div class="nav-links">
+                <a href="index.html" class="pill-link">PROJECTS</a>
+                <a href="fun.html" class="pill-link pill-fun">FUN</a>
+                <a href="mailto:sochiefilm@gmail.com" class="pill-link">CONTACT</a>
+            </div>
+            <div class="nav-right">
+                <a href="https://www.linkedin.com/in/sochie-odunlami/" class="nav-social" target="_blank">
+                    <img src="attributes/images/linkedin.svg" alt="LinkedIn">
+                </a>
+                <a href="https://www.youtube.com/@sochie19" class="nav-social" target="_blank">
+                    <img src="attributes/images/youtube.svg" alt="YouTube">
+                </a>
+                <a href="https://github.com/sochieodunlam" class="nav-social" target="_blank">
+                    <img src="attributes/images/github.svg" alt="GitHub">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Draggable Canvas -->
+    <div class="fun-canvas">
+
+        <!-- Projects Table -->
+        <div class="floating-el projects-table-wrap" data-draggable>
+            <div class="floating-el-header">
+                <span>Other random projects</span>
+                <div class="floating-el-dots">
+                    <div class="floating-el-dot"></div>
+                    <div class="floating-el-dot"></div>
+                    <div class="floating-el-dot"></div>
+                </div>
+            </div>
+            <table class="projects-table">
+                <thead>
+                    <tr>
+                        <th>Project</th>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Role</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-row-clickable" data-popup="cherry-pie">
+                        <td class="table-project-name">Snake Box Algorithm</td>
+                        <td>January 2026</td>
+                        <td><span class="table-tag">Software Project</span></td>
+                        <td>Engineer</td>
+                        <td><a href="https://github.com/sochieodunlam/snake-box-algorithm" class="table-link" target="_blank">GitHub</a></td>
+                    </tr>
+                    <tr class="table-row-clickable" data-popup="robot">
+                        <td class="table-project-name">MODLR</td>
+                        <td>Sep-Dec 2025</td>
+                        <td><span class="table-tag">Startup</span></td>
+                        <td>Co-founder</td>
+                        <td><a href="https://www.linkedin.com/company/modlrcard/posts/?feedView=all" class="table-link" target="_blank">LinkedIn</a></td>
+                    </tr>
+                    <tr class="table-row-clickable" data-popup="unveil">
+                        <td class="table-project-name">Split Minds</td>
+                        <td>December 2025</td>
+                        <td><span class="table-tag">Data Vis</span></td>
+                        <td>Engineer</td>
+                        <td><a href="https://csex57.github.io/splitminds/" class="table-link" target="_blank">GitHub</a></td>
+                    </tr>
+                    <tr class="table-row-clickable" data-popup="fortune">
+                        <td class="table-project-name">Zombie Simulator</td>
+                        <td>May 2025</td>
+                        <td><span class="table-tag">Software Project</span></td>
+                        <td>Engineer</td>
+                        <td><a href="https://github.com/missing-repository" class="table-link" target="_blank">GitHub</a></td>
+                    </tr>
+                    <tr class="table-row-clickable" data-popup="nasa">
+                        <td class="table-project-name">Exploring NYC!</td>
+                        <td>June 2025</td>
+                        <td><span class="table-tag">Video</span></td>
+                        <td>Engineer</td>
+                        <td><a href="https://www.youtube.com/shorts/bB57X7uFs-4" class="table-link" target="_blank">Youtube</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Links / Bookmarks -->
+        <div class="floating-el links-card" data-draggable>
+            <div class="floating-el-header">
+                <span>Links</span>
+                <div class="floating-el-dots">
+                    <div class="floating-el-dot"></div>
+                    <div class="floating-el-dot"></div>
+                    <div class="floating-el-dot"></div>
+                </div>
+            </div>
+            <div class="links-list">
+                <a href="https://www.linkedin.com/in/sochie-odunlami/" class="link-item" target="_blank">
+                    <img src="attributes/images/linkedin.svg" alt="LinkedIn">
+                    LinkedIn
+                </a>
+                <a href="https://www.youtube.com/@sochie19" class="link-item" target="_blank">
+                    <img src="attributes/images/youtube.svg" alt="YouTube">
+                    YouTube
+                </a>
+                <a href="https://github.com/sochieodunlam" class="link-item" target="_blank">
+                    <img src="attributes/images/github.svg" alt="GitHub">
+                    GitHub
+                </a>
+                <a href="mailto:sochiefilm@gmail.com" class="link-item">
+                    sochiefilm@gmail.com
+                </a>
+            </div>
+        </div>
+
+        <!-- Quote / Note -->
+        <div class="floating-el note-card" data-draggable>
+            <div class="floating-el-header">
+                <span>Note</span>
+                <div class="floating-el-dots">
+                    <div class="floating-el-dot"></div>
+                    <div class="floating-el-dot"></div>
+                    <div class="floating-el-dot"></div>
+                </div>
+            </div>
+            <div class="note-body">
+                "hi if you're reading this"
+                <span>— Sochie</span>
+            </div>
+        </div>
+
+        <!-- Sticker -->
+        <div class="floating-el sticker-card sticker-packing" data-draggable>
+            <img src="attributes/images/packing.jpg" style="width: 100%; display: block;">
+            <p class="photo-caption">Packing for study abroad in Sydney!</p>
+        </div>
+
+        <div class="floating-el sticker-card sticker-finalist" data-draggable>
+            <img src="attributes/images/finalist.jpg" style="width: 100%; display: block;">
+            <p class="photo-caption">SVC Semifinalist!</p>
+        </div>
+
+        <!-- Greek Statue -->
+        <div class="floating-el floating-img sticker-statue" data-draggable>
+            <img src="attributes/images/greek_statue_dither.png" alt="Greek Statue">
+        </div>
+
+        <!-- Satellite -->
+        <div class="floating-el floating-img sticker-satellite" data-draggable>
+            <img src="attributes/images/satellite.png" alt="Satellite">
+        </div>
+
+        <!-- Spinning Star -->
+        <div class="floating-el spinning-star" data-draggable>
+            <img src="attributes/images/star.png" alt="Star">
+        </div>
+
+    </div>
+
+    <!-- Popups -->
+    <div class="popup-overlay" id="popup-cherry-pie">
+        <div class="popup">
+            <button class="popup-close">&times;</button>
+            <h3>Snake Box Algorithm</h3>
+            <p>Made this for another project, ended up not using it, but it still looks pretty cool! It's pretty simple because no AI was used and I made it in two days 🤙</p>
+            <a href="https://github.com/sochieodunlam/snake-box-algorithm" target="_blank">View on GitHub &rarr;</a>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="popup-robot">
+        <div class="popup">
+            <button class="popup-close">&times;</button>
+            <h3>MODLR</h3>
+            <p>Semi-Finalists at the Skandalaris Venture Competition. MODLR was a fintech startup creating the first customizable credit card platform that lets users build and rebuild their card benefits every quarter. We empower consumers to pay only for the perks they actually use, putting financial control back in their hands. Ultimately didn't work out with timing + customer alignment but amazing experience nonetheless.</p>
+            <a href="https://www.linkedin.com/company/modlrcard/posts/?feedView=all" target="_blank">View on LinkedIn &rarr;</a>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="popup-unveil">
+        <div class="popup">
+            <button class="popup-close">&times;</button>
+            <h3>Split Minds Data Visualization</h3>
+            <p>D3 Data Visualization made for WashU's Data Visualization class. Uses twin IQ data (twins who grew up in different environments, kind of like a real-life parent trap) to help you form opinions on nature vs nurture!</p>
+            <a href="https://csex57.github.io/splitminds/" target="_blank">View on GitHub &rarr;</a>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="popup-fortune">
+        <div class="popup">
+            <button class="popup-close">&times;</button>
+            <h3>Zombie Outbreak Simulation</h3>
+            <p>Would you believe me if I told you that I couldn't find the github for this... Interactive data visualization made using HTML/CSS/Javascript/Python/Flask/Google Maps API.</p>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="popup-nasa">
+        <div class="popup">
+            <button class="popup-close">&times;</button>
+            <h3>Exploring NYC!</h3>
+            <p>Short form video exploring New York City! Not much else to say about this one. Made many videos during Summer 2025</p>
+            <a href="https://www.youtube.com/shorts/bB57X7uFs-4" target="_blank">Watch on Youtube &rarr;</a>
+        </div>
+    </div>
+
+    <script src="JS/fun.js"></script>
+
+</body>
+</html>

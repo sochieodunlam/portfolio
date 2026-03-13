@@ -1,0 +1,534 @@
+@font-face {
+    font-family: sf-mono-regular;
+    src: url("../attributes/fonts/SFMonoRegular.otf")
+}
+
+@font-face {
+    font-family: helvetica-neue;
+    src: url("../attributes/fonts/HelveticaNeue\ Thin.ttf")
+}
+
+@font-face {
+    font-family: akaya-telivigala;
+    src: url("../attributes/fonts/AkayaTelivigala-Regular.ttf")
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f4f4ed;
+    color: #1a1a1a;
+    font-family: 'DM Mono', monospace;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* --- Dot Grid Background --- */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-image: radial-gradient(circle, rgba(26, 26, 26, 0.12) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+}
+
+/* --- Navigation (shared style) --- */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 40px;
+    background: rgba(244, 244, 237, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.15);
+}
+
+.nav-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+}
+
+.nav-logo:hover {
+    color: #7e8dd5;
+}
+
+.nav-links {
+    display: flex;
+    gap: 12px;
+}
+
+.pill-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid rgba(26, 26, 26, 0.2);
+    border-radius: 9999px;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.pill-link:hover {
+    border-color: #7e8dd5;
+    color: #7e8dd5;
+}
+
+@keyframes rainbow-border {
+    0%   { border-color: #ff6b6b; color: #ff6b6b; transform: rotate(-1deg); }
+    14%  { border-color: #ffa94d; color: #ffa94d; transform: rotate(1deg) scale(1.03); }
+    28%  { border-color: #ffd43b; color: #ffd43b; transform: rotate(-0.5deg); }
+    42%  { border-color: #69db7c; color: #69db7c; transform: rotate(1deg) scale(1.05); }
+    57%  { border-color: #74c0fc; color: #74c0fc; transform: rotate(-1deg); }
+    71%  { border-color: #7e8dd5; color: #7e8dd5; transform: rotate(0.5deg) scale(1.03); }
+    85%  { border-color: #da77f2; color: #da77f2; transform: rotate(-0.5deg); }
+    100% { border-color: #ff6b6b; color: #ff6b6b; transform: rotate(0deg); }
+}
+
+.pill-fun {
+    position: relative;
+}
+
+.pill-fun:hover {
+    animation: rainbow-border 1.2s ease-in-out infinite;
+    border-width: 2px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-social {
+    display: flex;
+    align-items: center;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.nav-social:hover {
+    opacity: 1;
+}
+
+.nav-social img {
+    height: 24px;
+    width: 24px;
+    object-fit: contain;
+    filter: brightness(0);
+}
+
+/* --- Canvas (the draggable area) --- */
+.fun-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+}
+
+/* --- Draggable Floating Elements --- */
+.floating-el {
+    position: absolute;
+    background: rgba(244, 244, 237, 0.95);
+    border: 1px solid rgba(26, 26, 26, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    cursor: grab;
+    user-select: none;
+    z-index: 10;
+    transition: box-shadow 0.2s ease;
+}
+
+.floating-el:active {
+    cursor: grabbing;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+    z-index: 100;
+}
+
+.floating-el-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(26, 26, 26, 0.4);
+}
+
+.floating-el-dots {
+    display: flex;
+    gap: 5px;
+}
+
+.floating-el-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid rgba(26, 26, 26, 0.15);
+}
+
+/* --- Projects Table --- */
+.projects-table-wrap {
+    top: 120px;
+    left: 60px;
+    width: 680px;
+}
+
+.projects-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+}
+
+.projects-table thead th {
+    padding: 10px 16px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(26, 26, 26, 0.35);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+}
+
+.projects-table tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.05);
+    color: #1a1a1a;
+    font-weight: 300;
+}
+
+.projects-table tbody tr {
+    transition: background 0.15s ease;
+}
+
+.projects-table tbody tr:hover {
+    background: rgba(126, 141, 213, 0.06);
+}
+
+.table-project-name {
+    font-weight: 400;
+}
+
+.table-link {
+    color: #7e8dd5;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.table-link:hover {
+    text-decoration: underline;
+}
+
+.table-tag {
+    display: inline-block;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 3px 8px;
+    border: 1px solid rgba(26, 26, 26, 0.12);
+    border-radius: 9999px;
+    color: rgba(26, 26, 26, 0.5);
+}
+
+/* --- Links / Bookmarks Card --- */
+.links-card {
+    top: 140px;
+    right: 80px;
+    left: auto;
+    width: 280px;
+}
+
+.links-list {
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 300;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background 0.15s ease;
+}
+
+.link-item:hover {
+    background: rgba(126, 141, 213, 0.08);
+}
+
+.link-item img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    filter: brightness(0);
+    opacity: 0.5;
+}
+
+/* --- Note Card --- */
+.note-card {
+    top: 440px;
+    right: 120px;
+    left: auto;
+    width: 260px;
+}
+
+.note-body {
+    padding: 16px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #1a1a1a;
+}
+
+.note-body span {
+    display: block;
+    margin-top: 12px;
+    font-family: 'DM Mono', monospace;
+    font-style: normal;
+    font-size: 10px;
+    color: rgba(26, 26, 26, 0.35);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* --- Sticker (small floating fun element) --- */
+.sticker-card {
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+    background: #f4f4ed;
+    border-color: rgba(26, 26, 26, 0.08);
+}
+
+.photo-caption {
+    padding: 8px 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 300;
+    color: rgba(26, 26, 26, 0.5);
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+
+.sticker-packing {
+    top: 490px;
+    left: 60px;
+    width: 220px;
+}
+
+.sticker-finalist {
+    top: 200px;
+    left: 760px;
+    width: 320px;
+    transform: rotate(2deg);
+}
+
+/* --- Floating standalone images (no box around them) --- */
+.floating-img {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    overflow: visible;
+    border-radius: 0;
+}
+
+.floating-img:active {
+    box-shadow: none;
+}
+
+.floating-img img {
+    width: 100%;
+    display: block;
+}
+
+.sticker-statue {
+    top: 520px;
+    left: 500px;
+    width: 200px;
+}
+
+.sticker-satellite {
+    bottom: 60px;
+    right: 80px;
+    left: auto;
+    top: auto;
+    width: 160px;
+}
+
+/* --- Spinning Star --- */
+.spinning-star {
+    top: 400px;
+    left: 350px;
+    width: 180px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    overflow: visible;
+    border-radius: 0;
+}
+
+.spinning-star:active {
+    box-shadow: none;
+}
+
+.spinning-star img {
+    width: 100%;
+    display: block;
+    animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.sticker-card .sticker-emoji {
+    font-size: 36px;
+    line-height: 1;
+}
+
+.sticker-card .sticker-label {
+    margin-top: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(26, 26, 26, 0.5);
+}
+
+/* --- Popup --- */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 26, 26, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 500;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-overlay.active {
+    display: flex;
+}
+
+.popup {
+    background: #f4f4ed;
+    border: 1px solid rgba(26, 26, 26, 0.15);
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 480px;
+    width: 90%;
+    position: relative;
+}
+
+.popup-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 18px;
+    color: rgba(26, 26, 26, 0.4);
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.popup-close:hover {
+    color: #1a1a1a;
+}
+
+.popup h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.popup p {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(26, 26, 26, 0.65);
+    margin-bottom: 20px;
+}
+
+.popup a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #7e8dd5;
+    text-decoration: none;
+}
+
+.popup a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .nav-links {
+        display: none;
+    }
+
+    .projects-table-wrap {
+        width: 90vw;
+        left: 5vw;
+    }
+
+    .links-card,
+    .note-card,
+    .sticker-card,
+    .floating-img,
+    .spinning-star {
+        display: none;
+    }
+}
