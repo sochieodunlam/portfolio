@@ -3,62 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/styles.css">
-    <title>Sochie Porfolio</title>
+    <title>Sochie Portfolio</title>
 </head>
 <body>
-<br><br>
 
-    <div id="header">
-        <div id="name-container">
-            <h1 id="name">Sochie</h1>
-            <img id="star" src="/attributes/images/star.png">
+    <div id="grid-container"></div>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">sochie's portfolio</a>
+            <div class="nav-links">
+                <a href="index.html" class="pill-link">PROJECTS</a>
+                <a href="fun.html" class="pill-link pill-fun">FUN</a>
+                <a href="mailto:sochiefilm@gmail.com" class="pill-link">CONTACT</a>
+            </div>
+            <div class="nav-right">
+                <a href="https://www.linkedin.com/in/sochie-odunlami/" class="nav-social" target="_blank">
+                    <img src="attributes/images/linkedin.svg" alt="LinkedIn">
+                </a>
+                <a href="https://www.youtube.com/@sochie19" class="nav-social" target="_blank">
+                    <img src="attributes/images/youtube.svg" alt="YouTube">
+                </a>
+                <a href="https://github.com/sochieodunlam" class="nav-social" target="_blank">
+                    <img src="attributes/images/github.svg" alt="GitHub">
+                </a>
+            </div>
         </div>
+    </nav>
 
-        <div id=icons>
-            <a id=linkedin href="https://www.linkedin.com/in/sochie-odunlami/">
-                <img class=icon src="attributes/images/linkedin.svg">
-            </a>
-
-            <a class=icon id="youtube" href="https://www.youtube.com/@sochie19">
-                <img src="attributes/images/youtube.svg">
-            </a>
-
-            <a class=icon id="github" href="https://github.com/sochieodunlam">
-                <img src="attributes/images/github.svg">
-            </a>
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="hero-inner">
+            <!-- Left: Name + Affiliations -->
+            <div class="hero-left">
+                <h1 class="hero-name">Hi! My name is Sochie.</h1>
+                <p class="hero-subtitle">I'm an engineer, filmmaker, and entrepreneur. Currently at WashU studying CS, Math, and Entrepreneurship. Feel free to reach out!</p>
+                <div class="affiliations">
+                    <img src="attributes/images/barclays.png" alt="Barclays" id="barclays-logo">
+                    <img src="attributes/images/washu.png" alt="WashU" id="washu-logo">
+                    <img src="attributes/images/blk.png" alt="BLK Capital Management" id="blk-logo">
+                    <!-- <img src="attributes/images/logo.png" alt="" class="affiliation-logo"> -->
+                </div>
+            </div>
+            <!-- Right: Experience -->
+            <div class="hero-right">
+                <p class="section-label">Currently... </p>
+                <div class="experience-list">
+                    <div class="experience-item">
+                        <span class="exp-role">Founder</span>
+                        <span class="exp-company">Cherimoya</span>
+                        <span class="exp-company">Feb 2026 - Present</span>
+                    </div>
+                    <div class="experience-item">
+                        <span class="exp-role">Technology Analyst Intern</span>
+                        <span class="exp-company">Barclays</span>
+                        <span class="exp-company">Summer 2026</span>
+                    </div>
+                    <div class="experience-item">
+                        <span class="exp-role">Software Engineer</span>
+                        <span class="exp-company">Stealth Startup</span>
+                        <span class="exp-company">Jan 2026 – Present</span>
+                    </div>
+                    <div class="experience-item">
+                        <span class="exp-role">Co-Founder</span>
+                        <span class="exp-company">MODLR</span>
+                        <span class="exp-company">Sep 2025 – Dec 2025</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="sections" id="div-one"></div>
-    <div class="sections" id="div-two"></div>
-    <div class="sections" id="div-three"></div>
+    </section>
 
-    <!-- <div id="window">
-        <div id="window-top"></div>
-        <div id="window-bottom"></div>
-    </div>
+    <!-- Projects Grid -->
+    <section class="projects-section" id="projects">
+        <h2 class="section-label">Recent!</h2>
+        <div class="projects-grid">
+            <!--Cherry Pie -->
+            <div class="project-card">
+                <div class="project-media">
+                    <video src="attributes/video/cherry_pie.mov" autoplay loop muted playsinline></video>
+                    <div class="project-overlay">
+                        <span class="overlay-role">Co-Writer, Director, Editor</span>
+                        <p class="overlay-text">Four friends accidentally kill at their high school graduation party. They must work through their differences in order to protect themselves.</p>
+                        <a href="https://youtu.be/5R8t2CChOOw" class="overlay-link" target="_blank">
+                            <img src="attributes/images/youtube.svg" alt="YouTube" class="overlay-icon">
+                            <span>Watch on YouTube</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-title">Cherry Pie</span>
+                    <span class="project-meta">FILM · May 2025</span>
+                </div>
+            </div>
+            <!-- AI Robot!-->
+            <div class="project-card">
+                <div class="project-media">
+                    <video src="attributes/video/evil_robot.mov" autoplay loop muted playsinline></video>
+                    <div class="project-overlay">
+                        <span class="overlay-role">Engineer</span>
+                        <p class="overlay-text">Thought it would be funny to make a mini PC using a Raspberry Pi 5, connect it to the ChatGPT API and give it an evil robot personality, and then make a video about it.</p>
+                        <a href="https://github.com/YOUR-ROBOT-REPO" class="overlay-link" target="_blank">
+                            <img src="attributes/images/github.svg" alt="GitHub" class="overlay-icon">
+                            <span>View on GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-title">Talking AI Robot</span>
+                    <span class="project-meta">Hardware/Software Project · August 2025 </span>
+                </div>
+            </div>
+            <!-- Unveil AI -->
+            <div class="project-card">
+                <div class="project-media">
+                    <video src="attributes/video/unveil_ai.mov" autoplay loop muted playsinline></video>
+                    <div class="project-overlay">
+                        <span class="overlay-role">Engineer</span>
+                        <p class="overlay-text">Finalist at Google Dev Fest hackathon. Allows users to unzip entire repositories, get detailed explanations with code snippets, and have a real phone call with an AI senior developer who knows the codebase.</p>
+                        <a href="https://github.com/UnveilAI" class="overlay-link" target="_blank">
+                            <img src="attributes/images/github.svg" alt="GitHub" class="overlay-icon">
+                            <span>View on GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-title">Unveil AI</span>
+                    <span class="project-meta">Software Project ·April 2025</span>
+                </div>
+            </div>
+            <!-- Fortune, Fields of Wealth -->
+            <div class="project-card">
+                <div class="project-media">
+                    <video src="attributes/video/fields_of_wealth.mov" autoplay loop muted playsinline></video>
+                    <div class="project-overlay">
+                        <span class="overlay-role">Cinematographer</span>
+                        <p class="overlay-text">Video content for Rize Magazine's 'Fortune' Photoshoot.</p>
+                        <a href="https://www.instagram.com/p/DTy2qQjCVah/" class="overlay-link" target="_blank">
+                            <img src="attributes/images/instagram.svg" alt="YouTube" class="overlay-icon">
+                            <span>Watch on Instagram</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-title">Rize Magazine 'Fortune' Photoshoot</span>
+                    <span class="project-meta">Video · December 2025</span>
+                </div>
+            </div>
+            <!-- Farm Navigators -->
+            <div class="project-card">
+                <div class="project-media">
+                    <video src="attributes/video/nasa_space_apps.mov" autoplay loop muted playsinline></video>
+                    <div class="project-overlay">
+                        <span class="overlay-role">Engineer</span>
+                        <p class="overlay-text">An interactive story-driven game that teaches sustainable farming through NASA Earth Science data. Players interpret real satellite data to make critical decisions and save their inherited family farm. Features original art! Created at the NASA Space Apps Hackathon.</p>
+                        <a href="https://github.com/rduan1228/NASA-Hackathon-frontend" class="overlay-link" target="_blank">
+                            <img src="attributes/images/www.svg" alt="Link" class="overlay-icon">
+                            <span>View on GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-title">Farm Navigators</span>
+                    <span class="project-meta">Software Project · October 2025</span>
+                </div>
+            </div>
+            <!-- Project 6 — empty -->
+            <div class="project-card">
+                <div class="project-media">
+                    <video src="attributes/video/cherimoya.mov" autoplay loop muted playsinline></video>
+                    <div class="project-overlay">
+                        <span class="overlay-role">Founder</span>
+                        <p class="overlay-text">Enterprise agents for people who have no idea how agents work.</p>
+                        <a href="https://YOUR-PROJECT-SIX-LINK.com" class="overlay-link" target="_blank">
+                            <img src="attributes/images/www.svg" alt="Link" class="overlay-icon">
+                            <span>View Project</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-title">Cherimoya</span>
+                    <span class="project-meta">COMING SOON</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div>
-        <p class ="css-typing" id="last-login"></p>
-        <p class="css-typing" id="open-bracket">const sochie = {</p>
-        <p class="css-typing" id="skills">skills: ['product engineering', 'design'],</p>
-        <p class="css-typing" id="current">currently: 'studying abroad in Sydney, Australia',</p>
-        <p class="css-typing" id="contact">contact: 'sochiefilm@gmail.com'</p> 
-        <p class="css-typing" id="closed-bracket">}</p>
-    </div> -->
 
-    <div id="intro">
-        <p>Hi my name is <strong id="bold">Sochie!</strong><br>I'm a <strong>product engineer</strong> who likes <u>art + technology + entrepreneurship.</u> Feel free to reach out!</p>
-        <p>Currently: Studying abroad in Sydney, Australia<br></p>
-    </div>
+    <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
+    <!-- <script src="JS/carousel.js"></script> -->
+    <!-- <script src="JS/script.js"></script> -->
 
-    <!-- <img id="statue" src="attributes/images/greek_statue_dither.png"> -->
-    <a href="projects.html">Projects</a>
-
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="JS/carousel.js"></script>
-    <script src="JS/script.js"></script>
-    
+    <script src="JS/main.js"></script>
 
 </body>
 </html>
