@@ -186,11 +186,36 @@ body {
     opacity: 1;
 }
 
-.nav-social img {
+/* .nav-social img {
     height: 24px;
     width: 24px;
     object-fit: contain;
     filter: brightness(0);
+} */
+
+#linkedin-icon img {
+    height: 22px;
+    width: 22px;
+    object-fit: contain;
+    filter: brightness(0);
+    position: relative;
+    top: -2px;
+}
+
+#youtube-icon img {
+    height: 26px;
+    width: 26px;
+    object-fit: contain;
+    filter: brightness(0);
+}
+
+#github-icon img {
+    height: 24px;
+    width: 24px;
+    object-fit: contain;
+    filter: brightness(0);
+    position: relative;
+    top: -1px;
 }
 
 /* --- Hero --- */
